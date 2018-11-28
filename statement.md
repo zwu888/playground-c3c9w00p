@@ -1,19 +1,19 @@
-# Welcome!
-
-This C++ template lets you get started quickly with a simple one-page playground.
+# 
 
 ```C++ runnable
-#include <iostream>
-
+#include <unordered_map>
+#include <tuple>
 using namespace std;
+typedef tuple<int, string, string> myTuple_t;
+typedef unordered_map<string, myTuple_t> myMap_t;
 
-int main() 
+int main ()
 {
-    cout << "Hello, World!";
+    myMap_t MyMap;
+    MyMap.insert({{“key1”, make_tuple (1, “Joe”, “17 Palace St.”)}});
+    MyMap.insert({{“key2”, make_tuple (2, “Greg”, “14 Tuxedo Blvd.”)}});
+    MyMap.insert({{“key3”, make_tuple (3, “Beth”, “244 Laurel Rd.”)}});
+    for (auto& x: MyMap)
+        cout << get<0>(x.second) << get<1>(x.second) << get<2>(x.second);
     return 0;
 }
-```
-
-# Advanced usage
-
-If you want a more complex example (external libraries, viewers...), use the [Advanced C++ template](https://tech.io/select-repo/598)
