@@ -3,9 +3,11 @@
 ```C++ runnable
 #include <unordered_map>
 #include <tuple>
+#include<iostream>
 using namespace std;
 typedef tuple<int, string, string> myTuple_t;
 typedef unordered_map<string, myTuple_t> myMap_t;
+using namespace std;
 
 int main ()
 {
